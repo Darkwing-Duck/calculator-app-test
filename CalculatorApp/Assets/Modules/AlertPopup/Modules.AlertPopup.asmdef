@@ -1,10 +1,9 @@
 {
-    "name": "Modules.Calculator",
+    "name": "Modules.AlertPopup",
     "rootNamespace": "",
     "references": [
-        "GUID:2a27567e9750345ff81cd41624e5939c",
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:cccbce0aa1de340988d0f69bdfa0e161"
+        "GUID:2a27567e9750345ff81cd41624e5939c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
