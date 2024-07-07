@@ -11,11 +11,11 @@ namespace Modules.Calculator.Model
 		public event Action<HistoryItemData> OnHistoryItemAdded;
 		public event Action<string> OnInputValueChanged;
 
-		public string InputValue => _data.InputValue;
+		public string InputValue => PersistentData.InputValue;
 
 		public void SetInputValue(string value)
 		{
-			_data.InputValue = value;
+			PersistentData.InputValue = value;
 		}
 
 		public void Compute()
@@ -23,12 +23,12 @@ namespace Modules.Calculator.Model
 			var inputValueCache = InputValue;
 			
 			if (ProcessResult(InputValue, out var result)) {
-				_data.InputValue = string.Empty;
+				PersistentData.InputValue = string.Empty;
 				OnInputValueChanged?.Invoke(InputValue);
 			}
 			
 			var item = new HistoryItemData(inputValueCache, result);
-			_data.HistoryItems.Add(item);
+			PersistentData.HistoryItems.Add(item);
 			OnHistoryItemAdded?.Invoke(item);
 		}
 		
@@ -45,7 +45,7 @@ namespace Modules.Calculator.Model
 		
 		public IReadOnlyList<HistoryItemData> GetHistory()
 		{
-			return _data.HistoryItems;
+			return PersistentData.HistoryItems;
 		}
 
 		#region Model Data Types

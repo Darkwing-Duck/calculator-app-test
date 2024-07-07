@@ -8,8 +8,8 @@ namespace Modules.Common
 		where TView : MonoBehaviour
 		where TModel : new()
 	{
-		public TView View { get; private set; }
-		public readonly TModel Model;
+		protected TView View;
+		protected readonly TModel Model;
 
 		private IViewProvider<TView> _viewProvider;
 
