@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Modules.Common;
-using UnityEngine;
 
 namespace Modules.Calculator.Model
 {
@@ -12,6 +13,8 @@ namespace Modules.Calculator.Model
 		public event Action<string> OnInputValueChanged;
 
 		public string InputValue => PersistentData.InputValue;
+		
+		private static readonly Regex InputValueValidator = new (@"^[0-9\+]*$");
 
 		public void SetInputValue(string value)
 		{
@@ -34,12 +37,16 @@ namespace Modules.Calculator.Model
 		
 		private bool ProcessResult(string input, out int result)
 		{
-			if (!ExpressionEvaluator.Evaluate(input, out int evaluatedValue)) {
+			if (!InputValueValidator.IsMatch(input)) {
 				result = -1;
 				return false;
 			}
-
-			result = evaluatedValue;
+			
+			var valuesToAdd = input.Split("+");
+			result = valuesToAdd
+				.Select(int.Parse)
+				.Sum();
+			
 			return true;
 		}
 		
@@ -47,6 +54,7 @@ namespace Modules.Calculator.Model
 		{
 			return PersistentData.HistoryItems;
 		}
+		
 
 		#region Model Data Types
 

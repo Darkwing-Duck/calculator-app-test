@@ -10,7 +10,6 @@ namespace Modules.Common.Storage
 		protected override void SetValue(string path, string value)
 		{
 			PlayerPrefs.SetString(path, value);
-			Debug.Log($"Path: {path}, Value = {value}");
 			PlayerPrefs.Save();
 		}
 
