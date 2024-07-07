@@ -73,7 +73,6 @@ namespace Modules.Calculator.Presenter
 				? itemData.Result.ToString()
 				: "ERROR";
 			
-			
 			itemView.transform.SetAsFirstSibling();
 			itemView.SetValue($"{itemData.InputValue}={result}");
 		}
