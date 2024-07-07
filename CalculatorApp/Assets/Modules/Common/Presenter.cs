@@ -5,7 +5,7 @@ namespace Modules.Common
 	public class EmptyModel {}
 	
 	public abstract class Presenter<TView, TModel> 
-		where TView : MonoBehaviour
+		where TView : ModuleView
 		where TModel : new()
 	{
 		protected TView View;
@@ -37,11 +37,21 @@ namespace Modules.Common
 		{
 			View = _viewProvider.Get(parent);
 			InitializeView(View);
+			
+			View.OnDestroyed += OnViewWasDestroyedImplicitly;
+			
 			OnActivate();
 		}
-		
+
+		private void OnViewWasDestroyedImplicitly()
+		{
+			View.OnDestroyed -= OnViewWasDestroyedImplicitly;
+			OnDeactivate();
+		}
+
 		public void Hide()
 		{
+			View.OnDestroyed -= OnViewWasDestroyedImplicitly;
 			_viewProvider.Release();
 			OnDeactivate();
 		}
@@ -54,7 +64,7 @@ namespace Modules.Common
 	}
 
 	public abstract class StatelessPresenter<TView> : Presenter<TView, EmptyModel>
-		where TView : MonoBehaviour
+		where TView : ModuleView
 	{
 		protected StatelessPresenter(IViewProvider<TView> viewProvider) : base(viewProvider)
 		{ }

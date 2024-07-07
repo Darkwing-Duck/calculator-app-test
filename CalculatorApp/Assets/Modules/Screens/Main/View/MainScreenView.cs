@@ -1,8 +1,9 @@
+using Modules.Common;
 using UnityEngine;
 
 namespace Modules.Screens.Main.View
 {
-	public class MainScreenView : MonoBehaviour
+	public class MainScreenView : ModuleView
 	{
 		[SerializeField]
 		private Transform _contentContainer;

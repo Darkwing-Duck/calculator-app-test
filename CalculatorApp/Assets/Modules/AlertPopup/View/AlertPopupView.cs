@@ -1,10 +1,11 @@
+using Modules.Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Modules.AlertPopup.View
 {
-	public class AlertPopupView : MonoBehaviour
+	public class AlertPopupView : ModuleView
 	{
 		[SerializeField]
 		private TMP_Text _messageField;

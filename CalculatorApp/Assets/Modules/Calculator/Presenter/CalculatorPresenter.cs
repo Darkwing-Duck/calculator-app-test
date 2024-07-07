@@ -62,6 +62,8 @@ namespace Modules.Calculator.Presenter
 			
 			Model.OnInputValueChanged -= OnModelInputValueChanged;
 			Model.OnHistoryItemAdded -= OnHistoryItemAdded;
+			
+			Save();
 		}
 
 		private void AddHistoryItemView(CalculatorModel.HistoryItemData itemData)
@@ -79,7 +81,6 @@ namespace Modules.Calculator.Presenter
 		private void OnHistoryItemAdded(CalculatorModel.HistoryItemData itemData)
 		{
 			AddHistoryItemView(itemData);
-			Save();
 			
 			if (!itemData.IsSuccess) {
 				_alertPopupService.ShowAlert("Please check the expression you just entered");
@@ -95,7 +96,6 @@ namespace Modules.Calculator.Presenter
 		{
 			Model.SetInputValue(value);
 			InvalidateResultButton();
-			Save();
 		}
 
 		private void InvalidateResultButton()

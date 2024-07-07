@@ -1,4 +1,5 @@
 using System;
+using Modules.Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 namespace Modules.Calculator.View
 {
 	
-	public class CalculatorView : MonoBehaviour
+	public class CalculatorView : ModuleView
 	{
 		public event Action OnResultButtonClicked;
 		public event Action<string> OnInputFieldValueChanged;
