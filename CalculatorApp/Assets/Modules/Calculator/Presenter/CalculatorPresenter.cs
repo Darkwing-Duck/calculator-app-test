@@ -11,7 +11,6 @@ namespace Modules.Calculator.Presenter
 		private const string Name = "Calculator";
 		private const int MinCharacters = 3;
 		
-		
 		private readonly IViewProvider<CalculatorHistoryItemView> _historyItemViewProvider;
 		private IAlertPopupService _alertPopupService;
 		private IModuleStorage _storage = new PlayerPrefsModuleStorage(Name);
@@ -79,6 +78,10 @@ namespace Modules.Calculator.Presenter
 		{
 			AddHistoryItemView(itemData);
 			Save();
+			
+			if (!itemData.IsSuccess) {
+				_alertPopupService.ShowAlert("Please check the expression you just entered");
+			}
 		}
 		
 		private void OnModelInputValueChanged(string value)
