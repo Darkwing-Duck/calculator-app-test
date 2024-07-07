@@ -18,7 +18,7 @@ namespace Modules.Calculator.Model
 
 		public void SetInputValue(string value)
 		{
-			PersistentData.InputValue = value;
+			PersistentData.InputValue = value.Replace(" ", "");
 		}
 
 		public void Compute()
