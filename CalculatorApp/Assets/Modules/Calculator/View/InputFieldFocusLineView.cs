@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace Modules.Calculator.View
 {
+	/// <summary>
+	/// Part of the calculator view that controls the state of focus line under the input field.
+	/// </summary>
 	public class InputFieldFocusLineView : MonoBehaviour
 	{
 		[SerializeField]

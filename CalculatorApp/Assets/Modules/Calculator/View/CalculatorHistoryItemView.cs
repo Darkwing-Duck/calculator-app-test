@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Modules.Calculator.View
 {
+	/// <summary>
+	/// History item view.
+	/// </summary>
 	public class CalculatorHistoryItemView : MonoBehaviour
 	{
 		[SerializeField]

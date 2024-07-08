@@ -7,6 +7,10 @@ using UnityEngine.UI;
 namespace Modules.Calculator.View
 {
 	
+	/// <summary>
+	/// Calculator module view.
+	/// Just a "passive" view that just forwards the event to the presenter. 
+	/// </summary>
 	public class CalculatorView : ModuleView
 	{
 		public event Action OnResultButtonClicked;

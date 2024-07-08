@@ -1,5 +1,9 @@
 namespace Modules.Common.Storage
 {
+	
+	/// <summary>
+	/// Describes common module's storage interface.
+	/// </summary>
 	public interface IModuleStorage
 	{
 		bool Has();

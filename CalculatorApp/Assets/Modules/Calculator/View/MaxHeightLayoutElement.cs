@@ -4,6 +4,14 @@ using UnityEngine.UI;
 
 namespace Modules.Calculator.View
 {
+	
+	/// <summary>
+	/// A utility script that resolves the max height issue of the history list using autolayouting.
+	/// For this trick we need to make a real ScrollRect's content object to be ignored by the autolayouting
+	/// and create a fake autolayouting element which will take a part in aoutolayout calculation.
+	/// So, this script takes the real height of the history content rectTransform and if the height is greater than
+	/// "_maxHeight" than sets to the _fakeLayoutElement height "_maxHeight"
+	/// </summary>
 	[ExecuteInEditMode]
 	public class MaxHeightLayoutElement : UIBehaviour
 	{

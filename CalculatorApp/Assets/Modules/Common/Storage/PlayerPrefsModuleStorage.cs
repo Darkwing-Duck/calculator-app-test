@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Modules.Common.Storage
 {
+	
+	/// <summary>
+	/// Describes PlayerPrefs module's storage implementation.
+	/// </summary>
 	public class PlayerPrefsModuleStorage : ModuleStorage
 	{
 		public PlayerPrefsModuleStorage(string modulePath) : base(modulePath)

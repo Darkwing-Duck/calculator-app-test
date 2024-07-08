@@ -4,6 +4,9 @@ using Modules.Common;
 
 namespace Modules.AlertPopup.Presenter
 {
+	/// <summary>
+	/// Alert Popup module's presenter
+	/// </summary>
 	public class AlertPopupPresenter : Presenter<AlertPopupView, AlertPopupModel>
 	{
 		public AlertPopupPresenter() : base(new ResourcesViewProvider<AlertPopupView>())

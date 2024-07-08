@@ -2,8 +2,12 @@ using UnityEngine;
 
 namespace Modules.Common
 {
-	public class EmptyModel {}
 	
+	/// <summary>
+	/// Stateful presenter implementation.
+	/// </summary>
+	/// <typeparam name="TView"></typeparam>
+	/// <typeparam name="TModel"></typeparam>
 	public abstract class Presenter<TView, TModel> 
 		where TView : ModuleView
 		where TModel : new()
@@ -11,9 +15,9 @@ namespace Modules.Common
 		protected TView View;
 		protected readonly TModel Model;
 
-		private IViewProvider<TView> _viewProvider;
+		private IModuleViewProvider<TView> _viewProvider;
 
-		public Presenter(IViewProvider<TView> viewProvider)
+		public Presenter(IModuleViewProvider<TView> viewProvider)
 		{
 			_viewProvider = viewProvider;
 			Model = new TModel();
@@ -63,10 +67,18 @@ namespace Modules.Common
 		{ }
 	}
 
+	/// <summary>
+	/// Presenter that doesn't need any state so it will use 'EmptyModel' model.
+	/// </summary>
 	public abstract class StatelessPresenter<TView> : Presenter<TView, EmptyModel>
 		where TView : ModuleView
 	{
-		protected StatelessPresenter(IViewProvider<TView> viewProvider) : base(viewProvider)
+		protected StatelessPresenter(IModuleViewProvider<TView> viewProvider) : base(viewProvider)
 		{ }
 	}
+	
+	/// <summary>
+	/// Empty model object to be used in StatelessPresenter.
+	/// </summary>
+	public class EmptyModel {}
 }

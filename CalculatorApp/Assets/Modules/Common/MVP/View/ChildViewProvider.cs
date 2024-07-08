@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Modules.Common
 {
-	public class ChildViewProvider<TView> : IViewProvider<TView>
-		where TView : MonoBehaviour
+	public class ChildViewProvider<TView> : IModuleViewProvider<TView>
+		where TView : ModuleView
 	{
 		private TView _view;
 

@@ -3,6 +3,10 @@ using Unity.Plastic.Newtonsoft.Json;
 
 namespace Modules.Common.Storage
 {
+	
+	/// <summary>
+	/// Describes common module's storage implementation.
+	/// </summary>
 	public abstract class ModuleStorage : IModuleStorage
 	{
 		private const string RootPath = "Data/Modules";

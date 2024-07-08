@@ -2,6 +2,13 @@ using Modules.Common.Storage;
 
 namespace Modules.Common
 {
+	
+	/// <summary>
+	/// Persistent model of the module.
+	/// The model manages the persistent state object of the object,
+	/// and can be used to save the state to passed storage.
+	/// </summary>
+	/// <typeparam name="TData"></typeparam>
 	public abstract class PersistentModel<TData> where TData : new()
 	{
 		protected TData PersistentData = new();
