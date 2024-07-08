@@ -1,4 +1,4 @@
-using Modules.Common;
+using Modules.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

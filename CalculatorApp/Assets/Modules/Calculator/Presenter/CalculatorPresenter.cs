@@ -1,7 +1,7 @@
 using Modules.Calculator.Model;
 using Modules.Calculator.View;
-using Modules.Common;
-using Modules.Common.Storage;
+using Modules.Core;
+using Modules.Core.Storage;
 
 namespace Modules.Calculator.Presenter
 {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Modules.Common
+namespace Modules.Core
 {
 	public class ModuleView : MonoBehaviour
 	{

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Modules.Common
+namespace Modules.Core
 {
 	public class ResourcesViewProvider<TView> : IModuleViewProvider<TView>
 		where TView : MonoBehaviour

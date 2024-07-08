@@ -1,7 +1,7 @@
 using Modules.AlertPopup.Presenter;
 using Modules.Calculator;
 using Modules.Calculator.Presenter;
-using Modules.Common;
+using Modules.Core;
 using Modules.Screens.Main.View;
 
 namespace Modules.Screens.Main.Presenter

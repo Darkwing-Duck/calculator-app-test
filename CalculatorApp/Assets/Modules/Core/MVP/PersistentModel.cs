@@ -1,6 +1,6 @@
-using Modules.Common.Storage;
+using Modules.Core.Storage;
 
-namespace Modules.Common
+namespace Modules.Core
 {
 	
 	/// <summary>

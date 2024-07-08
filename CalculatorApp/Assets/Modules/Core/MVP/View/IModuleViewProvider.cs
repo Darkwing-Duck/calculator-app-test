@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Modules.Common
+namespace Modules.Core
 {
 	public interface IModuleViewProvider<out TView> where TView : MonoBehaviour
 	{

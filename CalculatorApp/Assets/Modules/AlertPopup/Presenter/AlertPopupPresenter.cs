@@ -1,6 +1,6 @@
 using Modules.AlertPopup.Model;
 using Modules.AlertPopup.View;
-using Modules.Common;
+using Modules.Core;
 
 namespace Modules.AlertPopup.Presenter
 {

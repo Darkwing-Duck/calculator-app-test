@@ -1,4 +1,4 @@
-using Modules.Common;
+using Modules.Core;
 using UnityEngine;
 
 namespace Modules.Screens.Main.View

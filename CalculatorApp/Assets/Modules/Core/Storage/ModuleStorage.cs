@@ -1,7 +1,7 @@
 using System.IO;
 using Unity.Plastic.Newtonsoft.Json;
 
-namespace Modules.Common.Storage
+namespace Modules.Core.Storage
 {
 	
 	/// <summary>

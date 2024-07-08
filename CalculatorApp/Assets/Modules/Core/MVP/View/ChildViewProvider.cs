@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Modules.Common
+namespace Modules.Core
 {
 	public class ChildViewProvider<TView> : IModuleViewProvider<TView>
 		where TView : ModuleView

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Modules.Common
+namespace Modules.Core
 {
 	
 	/// <summary>

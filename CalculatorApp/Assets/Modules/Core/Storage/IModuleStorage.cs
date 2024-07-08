@@ -1,4 +1,4 @@
-namespace Modules.Common.Storage
+namespace Modules.Core.Storage
 {
 	
 	/// <summary>
